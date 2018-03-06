@@ -1,0 +1,84 @@
+
+<md-card ng-style="{width: '300px'}" flex>
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">Magic: The Randoming</span>
+      <span class="md-subhead">Pick a Card</span>
+      <md-button class="md-primary" ng-click = "cc.getRandomCard()">Random</md-button>
+      <md-card-content>
+        <div layout="column">
+          <img ng-src="{{cc.randomCard.card.imageUrl}}" flex="50" ng-style="{width: '100%'}">
+        </div>
+      </md-card-content>
+      <md-input-container>
+        <label>Guess The Card</label>
+        <input ng-model="cc.guess"type="text">
+      </md-input-container>
+
+      <md-button class="md-primary" ng-click="cc.submitGuess(cc.guess)">Submit Guess</md-button>
+    </md-card-title-text>
+  </md-card-title>
+</md-card>
+
+
+<md-card ng-style="{width: '300px'}" flex>
+  <md-card-content>
+    <md-list>
+
+      <md-list-item ng-show="cc.randomCard.card.name">
+        <md-checkbox ng-model="cc.showClue.name"></md-checkbox>
+        <span class="md-list-item-text">
+          <p>Name:</p><p ng-show="cc.showClue.name"> {{cc.randomCard.card.name}}</p></span>
+      </md-list-item>
+
+      <md-list-item ng-show="cc.randomCard.card.power">
+        <md-checkbox ng-model="cc.showClue.power"></md-checkbox>
+        <span class="md-list-item-text">
+          <p>Power / Toughness:</p><p ng-show="cc.showClue.power"> {{cc.randomCard.card.power}} / {{cc.randomCard.card.toughness}}</p></span>
+      </md-list-item>
+
+      <md-list-item ng-show="cc.randomCard.card.rarity">
+        <md-checkbox ng-model="cc.showClue.rarity"></md-checkbox>
+        <span class="md-list-item-text">
+          <p>Rarity:</p><p ng-show="cc.showClue.rarity"> {{cc.randomCard.card.rarity}}</p></span>
+      </md-list-item>
+
+      <md-list-item ng-show="cc.randomCard.card.manaCost">
+        <md-checkbox ng-model="cc.showClue.manaCost"></md-checkbox>
+        <span class="md-list-item-text">
+          <p>Mana Cost:</p><p ng-show="cc.showClue.manaCost"> {{cc.randomCard.card.manaCost}}</p></span>
+      </md-list-item>
+
+      <md-list-item ng-show="cc.randomCard.card.type">
+        <md-checkbox ng-model="cc.showClue.type"></md-checkbox>
+        <span class="md-list-item-text">
+          <p>Type:</p><p ng-show="cc.showClue.type"> {{cc.randomCard.card.type}}</p></span>
+      </md-list-item>
+
+      <md-list-item ng-show="cc.randomCard.card.setName">
+        <md-checkbox ng-model="cc.showClue.setName"></md-checkbox>
+        <span class="md-list-item-text">
+          <p>Set Name:</p><p ng-show="cc.showClue.setName"> {{cc.randomCard.card.setName}}</p></span>
+      </md-list-item>
+
+      <md-list-item ng-show="cc.randomCard.card.text">
+        <md-checkbox ng-model="cc.showClue.text"></md-checkbox>
+        <span class="md-list-item-text">
+          <p>Rules Text:</p><p ng-show="cc.showClue.text"> {{cc.randomCard.card.text}}</p></span>
+      </md-list-item>
+
+      <md-list-item ng-show="cc.randomCard.card.flavor">
+        <md-checkbox ng-model="cc.showClue.flavor"></md-checkbox>
+        <span class="md-list-item-text">
+          <p>Flavor Text:</p><p ng-show="cc.showClue.flavor"> {{cc.randomCard.card.flavor}}</p></span>
+      </md-list-item>
+
+      <md-list-item ng-show="cc.randomCard.card.artist">
+        <md-checkbox ng-model="cc.showClue.artist"></md-checkbox>
+        <span class="md-list-item-text">
+          <p>Artist:</p><p ng-show="cc.showClue.artist"> {{cc.randomCard.card.artist}}</p></span>
+      </md-list-item>
+
+    </md-list>
+  </md-card-content>
+</md-card>
